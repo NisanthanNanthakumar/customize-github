@@ -1,0 +1,22 @@
+{
+    "manifest_version": 3,
+    "name": "Customize GitHub",
+    "version": "1.0",
+    "description": "Adds custom PR tabs to GitHub",
+    "permissions": ["tabs", "activeTab", "storage"],
+    "host_permissions": [
+      "https://github.com/*"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://github.com/*"],
+        "js": ["content.js"]
+      }
+    ],
+    "action": {
+      "default_popup": "config.html"
+    }
+  }
